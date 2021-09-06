@@ -21,4 +21,7 @@ describe('Input testing', () => {
     // Assert
     expect(inputEl.value).toBe('Do sports on Sunday');
   });
+  it('Should clear input when adding todo', () => {
+    // ar kai mes paspaudziam mygtuka inputas issivalo
+  });
 });
