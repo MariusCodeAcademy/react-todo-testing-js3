@@ -52,7 +52,11 @@ describe('Async testing', () => {
 
   it('Renders One Follower card on the screen', async () => {
     render(<MockFList />);
-    const contactEl = await screen.findByTestId(/contact-el-0/);
+    let contactEl;
+    await waitFor(() => {
+      contactEl = screen.getByTestId(/contact-el-0/);
+    });
+    // const contactEl = await screen.findByTestId(/contact-el-0/);
     expect(contactEl).toBeInTheDocument();
     // screen.debug();
   });
