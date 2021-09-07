@@ -65,5 +65,10 @@ test('Task should be gray when clicked(add a class)', () => {
   //mygtuko paspaudimo
   //pridejomo i sarasa
   // paspaudziam
+  render(<MockTodo />);
+  addToTodo(['Do sports on Sunday']);
+  const todoAddedEl = screen.getByText('Do sports on Sunday');
+  fireEvent.click(todoAddedEl);
   // pasiziurim ar turi klase todo-item-active
+  expect(todoAddedEl).toHaveClass('todo-item-active');
 });
